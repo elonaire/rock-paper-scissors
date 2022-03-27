@@ -1,16 +1,17 @@
 .item_container {
     border-radius: 100%;
-    padding: 2%;
+    padding: 3%;
+    background-color: #ffffff;
 }
 
 .rock {
-    border: 1.1em solid hsl(349, 71%, 52%);
+    border: 1em solid hsl(349, 71%, 52%);
 }
 
 .paper {
-    border: 1.1em solid hsl(230, 89%, 62%);
+    border: 1em solid hsl(230, 89%, 62%);
 }
 
 .scissors {
-    border: 1.1em solid hsl(39, 89%, 49%);
+    border: 1em solid hsl(39, 89%, 49%);
 }

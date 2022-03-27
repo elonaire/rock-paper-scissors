@@ -1,0 +1,19 @@
+.score_wrapper {
+    background-color: #ffffff;
+    border-radius: 5px;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.score_text {
+    color: hsl(229, 64%, 46%);
+    text-align: center;
+    font-size: 0.2em;
+}
+
+.score {
+    color: hsl(229, 25%, 31%);
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}

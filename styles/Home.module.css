@@ -5,15 +5,29 @@
 .main {
   min-height: 100vh;
   padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .logo_container {
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 0.2em solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  padding: 2%;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.double {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.single {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {

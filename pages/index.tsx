@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import ItemContainer from '../components/ItemContainer'
-import Rock from '../components/Rock'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import ScoreBoard from '../components/ScoreBoard'
 
 const Home: NextPage = () => {
   return (
@@ -16,11 +16,20 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.logo_container}>
-        <Image src="/images/logo.svg" alt="Rock Icon" width={52} height={52} />
+          <div className={styles.logo}>
+          <Image src="/images/logo.svg" alt="Game Logo" width={80} height={40} />
+          </div>
+          <div className={styles.scoreboard}>
+            <ScoreBoard />
+          </div>
         </div>
-        <ItemContainer itemName='rock'>
-          <Rock />
-        </ItemContainer>
+        <div className={styles.double}>
+        <ItemContainer itemName='rock' />
+        <ItemContainer itemName='paper' />
+        </div>
+        <div className={styles.single}>
+        <ItemContainer itemName='scissors' />
+        </div>
       </main>
     </div>
   )
