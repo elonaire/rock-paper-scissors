@@ -1,11 +1,16 @@
-import React from 'react'
-// import 
+import React, { FunctionComponent } from 'react'
 import Image from 'next/image'
 
-export default function Rock () {
+interface RockProps {
+    
+}
+ 
+const Rock: FunctionComponent<RockProps> = () => {
     return (
         <>
-        <Image src="/images/icon-rock.svg" alt="Rock Icon" width={72} height={72} />
+            <Image src="/images/icon-rock.svg" alt="Rock Icon" width={52} height={52} />
         </>
-    )
+    );
 }
+ 
+export default Rock;
