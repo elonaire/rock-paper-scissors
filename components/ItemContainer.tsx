@@ -4,11 +4,12 @@ import styles from '../styles/ItemContainer.module.css'
 
 interface ItemContainerProps {
     itemName: string
+    handleClick: (itemName: string) => void
 }
  
-const ItemContainer: FunctionComponent<ItemContainerProps> = ({itemName}) => {
+const ItemContainer: FunctionComponent<ItemContainerProps> = ({itemName, handleClick}) => {
     return (
-        <div className={`${styles.item_container} ${styles[itemName]}`}>
+        <div onClick={() => handleClick(itemName)} className={`${styles.item_container} ${styles[itemName]}`}>
             <Image src={`/images/icon-${itemName}.svg`} alt="Item Icon" width={52} height={52} />
         </div>
     );

@@ -4,8 +4,22 @@ import ItemContainer from '../components/ItemContainer'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import ScoreBoard from '../components/ScoreBoard'
+import Modal from '../components/Modal'
+import { useState } from 'react'
 
 const Home: NextPage = () => {
+  const [showModal, setShowModal] = useState(false);
+  
+  const handleItemClick = (itemName: string) => {
+    console.log('itemName', itemName);
+  }
+
+  const handleModalClose = () => {
+    console.log('works');
+    
+    setShowModal(false)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -24,12 +38,17 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className={styles.double}>
-        <ItemContainer itemName='rock' />
-        <ItemContainer itemName='paper' />
+        <ItemContainer handleClick={handleItemClick} itemName='paper' />
+        <ItemContainer handleClick={handleItemClick} itemName='scissors' />
         </div>
         <div className={styles.single}>
-        <ItemContainer itemName='scissors' />
+        
+        <ItemContainer handleClick={handleItemClick} itemName='rock' />
         </div>
+        <div className={styles.single}>
+          <button onClick={() => setShowModal(true)} className={styles.outlined_button}>RULES</button>
+        </div>
+        <Modal title="My Modal" onClose={handleModalClose} show={showModal} />
       </main>
     </div>
   )
