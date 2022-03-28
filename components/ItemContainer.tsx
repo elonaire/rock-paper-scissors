@@ -4,7 +4,7 @@ import styles from '../styles/ItemContainer.module.css'
 
 interface ItemContainerProps {
     itemName: string
-    handleClick: (itemName: string) => void
+    handleClick?: any
 }
  
 const ItemContainer: FunctionComponent<ItemContainerProps> = ({itemName, handleClick}) => {
