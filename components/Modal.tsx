@@ -3,7 +3,7 @@ import styles from '../styles/Modal.module.css'
 import Image from 'next/image'
 
 interface ModalProps {
-    onClose: () => void;
+    onClose: any;
     title: string;
     show: boolean;
 }

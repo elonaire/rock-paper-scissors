@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import ScoreBoard from '../components/ScoreBoard'
 import Modal from '../components/Modal'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
@@ -15,17 +15,13 @@ const Home: NextPage = () => {
   const [points, setPoints] = useState(0)
 
   const choices = ['rock', 'paper', 'scissors']
-  const randomChoice = Math.floor( Math.random() * choices.length)
   
   
   const handleItemClick = (itemName: string) => {
+    const randomChoice = Math.floor( Math.random() * choices.length)
     setYourChoice(itemName)
+    
     setComputerChoice(choices[randomChoice])
-    setWin(checkWin(yourChoice, computerChoice))
-    if (win === 'WIN') {
-      let pointTemp = points + 1
-      setPoints(pointTemp)
-    }
   }
 
   const resetChoice = () => {
@@ -37,6 +33,18 @@ const Home: NextPage = () => {
     
     setShowModal(false)
   }
+
+  useEffect(() => {
+    setWin(checkWin(yourChoice, computerChoice))
+    
+}, [yourChoice, computerChoice]);
+
+useEffect(() => {
+  if (win === 'WIN') {
+    let pointTemp = points + 1
+    setPoints(pointTemp)
+  }
+}, [win])
 
   const checkWin = (yourChoice: string, compChoice: string) => {
     if ((yourChoice === 'scissors' && compChoice === 'paper') || (yourChoice === 'rock' && compChoice === 'scissors') || (yourChoice === 'paper' && compChoice === 'rock')) {
